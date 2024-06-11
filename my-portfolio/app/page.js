@@ -1,58 +1,59 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
-import { BsFillMoonStarsFill } from "react-icons/bs";
-import {
-  AiFillTwitterCircle,
-  AiFillLinkedin,
-  AiFillYoutube,
-} from "react-icons/ai";
-import MyAvatar from "../public/my-avatar.png";
+
+import NavBar from "./components/navSection";
+import AboutMe from "./components/aboutMeSection";
+import Road1 from "../public/road_1.jpg";
+import Link from "next/link";
 
 export default function Home() {
-  // const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  console.log(darkMode);
 
   return (
-    <main>
-      <section className="min-h-screen">
-        <nav className="py-10 mb-12 flex justify-between dark:text-white">
-          <h1 className="font-burtons text-xl">DEVELOPED BY UTSAV</h1>
-          <ul className="flex items-center">
-            <li>
-              <BsFillMoonStarsFill
-                // onClick={() => setDarkMode(!darkMode)}
-                className=" cursor-pointer text-2xl"
-              />
-            </li>
-            <li>
-              <a
-                className="bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
-                href="#"
-              >
-                Resume
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div className="text-center p-10 py-10">
-          <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
-            Sooraj Utsavvv
-          </h2>
-          <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
-            Software Developer.
-          </h3>
-          <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
-            Hi, I'm Utsav - a passionate Front End Developer crafting immersive
-            web experiences. 🚀 Let's build something amazing together
-          </p>
-          <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
-            <AiFillTwitterCircle />
-            <AiFillLinkedin />
-            <AiFillYoutube />
-          </div>
-          <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
-            <Image src={MyAvatar} objectFit="cover" />
-          </div>
-        </div>
-      </section>
-    </main>
+    <div className={darkMode ? "dark" : ""}>
+      <main className=" bg-white px-10 dark:bg-gray-900 md:px-20 lg:px-40">
+        <section className="min-h-screen">
+          <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
+          <AboutMe />
+          <section>
+            <div>
+              <h3 className="text-3xl py-1 dark:text-white ">About Meee !</h3>
+              <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+                Hey there! I'm Utsav, a chill dude from the coastal town of
+                Kundapura in Karnataka.
+              </p>
+              <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+                I did my Bachelor of Engineering at PES University in Bangalore,
+                and now I'm rocking it as a Front End Developer. I've worked at
+                a couple of organisations(Still continuing and will be
+                continuing to do...), coding away and loving every moment of it.
+              </p>
+              <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+                Nature and beaches are my jam. When I'm not coding, you can find
+                me on wheels, cruising Indian roads on my bike or car. I'm all
+                about that road trip life!
+              </p>
+              <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+                I'm also a big fan of games and sports. Badminton, table tennis,
+                volleyball—you name it, I play it. People say I'm friendly and
+                lovable, which might explain why I've got a ton of friends.{" "}
+                <Link href={`/about-me`}>
+                  <span className="text-teal-500">
+                    know more about what I like apart from coding...
+                  </span>
+                </Link>
+              </p>
+              <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+                That's me in a nutshell. Let's build something awesome together!
+              </p>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
   );
 }
