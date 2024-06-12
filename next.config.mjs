@@ -2,7 +2,6 @@
 const nextConfig = {
   output: "export",
   images: {
-    loader: "custom",
     unoptimized: true,
   },
 };
