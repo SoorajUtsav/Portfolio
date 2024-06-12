@@ -25,7 +25,7 @@ const AboutMe = () => {
         <AiFillLinkedin />
         <AiFillYoutube />
       </div>
-      <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
+      <div className="flex mx-auto bg-gradient-to-b from-teal-500 rounded-full w-60 h-60 relative overflow-hidden mt-20 md:h-96 md:w-96">
         <Image src={MyAvatar} objectFit="cover" alt="My Avatar" />
       </div>
     </div>
